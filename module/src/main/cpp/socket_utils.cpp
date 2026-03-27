@@ -16,7 +16,7 @@ namespace socket_utils {
             return false;
         }
         char buf[4096];
-        len = sizeof(buf);
+        len = sizeof(buf) - 1;
         if (getsockopt(fd, SOL_SOCKET, SO_PEERSEC, buf, &len) != 0) {
             len = 0;
         }
